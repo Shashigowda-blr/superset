@@ -52,7 +52,7 @@ from cachelib.base import BaseCache
 from celery.schedules import crontab
 from dateutil import tz
 from flask import Blueprint
-from flask_appbuilder.security.manager import AUTH_DB
+from flask_appbuilder.security.manager import AUTH_LDAP
 from pandas._libs.parsers import STR_NA_VALUES  # pylint: disable=no-name-in-module
 
 from superset.advanced_data_type.plugins.internet_address import internet_address
@@ -316,7 +316,25 @@ DRUID_ANALYSIS_TYPES = ["cardinality"]
 # AUTH_DB : Is for database (username/password)
 # AUTH_LDAP : Is for LDAP
 # AUTH_REMOTE_USER : Is for using REMOTE_USER from web server
-AUTH_TYPE = AUTH_DB
+AUTH_TYPE = AUTH_LDAP
+# Will allow user self registration
+AUTH_USER_REGISTRATION = True
+
+# The default user self registration role
+AUTH_USER_REGISTRATION = "True"
+AUTH_USER_REGISTRATION_ROLE= "Admin"
+
+# When using LDAP Auth, setup the ldap server
+AUTH_LDAP_SERVER = "ldap://10.28.229.102:389"
+#AUTH_LDAP_USE_TLS = False
+#AUTH_LDAP_EMAIL_FIELD = "mail"
+AUTH_LDAP_SEARCH = "OU=user,DC=bigtree,DC=biz"
+AUTH_LDAP_BIND_USER = "CN=Sync App,OU=user,DC=bigtree,DC=biz"
+AUTH_LDAP_BIND_PASSWORD = "!nsp!red1988"
+AUTH_LDAP_UID_FIELD =  "sAMAccountName"
+AUTH_ROLES_SYNC_AT_LOGIN = True
+# Uncomment to setup Full admin role name
+AUTH_ROLE_ADMIN = 'Admin'
 
 # Uncomment to setup Full admin role name
 # AUTH_ROLE_ADMIN = 'Admin'
