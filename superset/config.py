@@ -325,12 +325,12 @@ AUTH_USER_REGISTRATION = "True"
 AUTH_USER_REGISTRATION_ROLE= "Admin"
 
 # When using LDAP Auth, setup the ldap server
-AUTH_LDAP_SERVER = "ldap://10.28.229.102:389"
+AUTH_LDAP_SERVER = "ldap://xx.xx.xxx.xxx:xxx"
 #AUTH_LDAP_USE_TLS = False
 #AUTH_LDAP_EMAIL_FIELD = "mail"
-AUTH_LDAP_SEARCH = "OU=user,DC=bigtree,DC=biz"
-AUTH_LDAP_BIND_USER = "CN=Sync App,OU=user,DC=bigtree,DC=biz"
-AUTH_LDAP_BIND_PASSWORD = "!nsp!red1988"
+AUTH_LDAP_SEARCH = "OU=xx,DC=xx,DC=xx"
+AUTH_LDAP_BIND_USER = "CN=xx App,OU=xx,DC=xx,DC=xx"
+AUTH_LDAP_BIND_PASSWORD = "xxxxx"
 AUTH_LDAP_UID_FIELD =  "sAMAccountName"
 AUTH_ROLES_SYNC_AT_LOGIN = True
 # Uncomment to setup Full admin role name
